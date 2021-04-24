@@ -32,7 +32,7 @@ int isEmpty(QUEUE *queue)
 		
 		
 int push(QUEUE *queue, int t)
-//要回传t的值，应该要传t的指针或者在return处回t
+
 {
 	if(queue->rear >= MAXSIZE)
 		return ERROR;
