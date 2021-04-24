@@ -32,14 +32,17 @@ int isEmpty(QUEUE *queue)
 		
 		
 int push(QUEUE *queue, int t)
+//要回传t的值，应该要传t的指针或者在return处回t
 {
 	if(queue->rear >= MAXSIZE)
 		return ERROR;
-		
-	t = queue->Q[queue->rear];
+
+	queue->Q[queue->rear]=t	;
+	//*t = queue->Q[queue->rear];
 	(queue->rear )++;
 	
 	return OK;
+
 }
 
 
@@ -78,30 +81,35 @@ int main()
 	{
 		getchar();
 		scanf("%c%d",&X, &T);
+		//printf("%c%d\n",X,T);
 		switch(X)
 		{
 			case'A':
 				push(queueA, T);
+				break;
 				
 			case'B':
 				push(queueB, T);
+				break;
 			
 			case'C':
 				push(queueC, T);
-			
+				break;
 		}
 		
 	}
-	int a;
+	int a=0;
 	while(isEmpty(queueA) != 1)
 	{
 	
 		pop(queueA,&temp);
-		a = a+temp;	 
+		//printf("%d",temp);
+		a = a+temp;
 	}
 	printf("%d\n", a);
 	
-	int b;
+	int b=0;
+	temp=0;
 	while(isEmpty(queueB) != 1)
 	{
 
@@ -110,7 +118,8 @@ int main()
 	}
 	printf("%d\n",b);
 	
-	int c;
+	int c=0;
+	temp=0;
 	while(isEmpty(queueC) != 1)
 	{
 		pop(queueC,&temp);
