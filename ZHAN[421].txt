@@ -1,0 +1,369 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define OK 0
+#define ERROR -1
+#define MAXSIZE 100
+
+struct Stack{
+	int top;
+	char S[MAXSIZE]
+};
+typedef struct Stack STACK;
+
+void initStack(STACK *stack)
+{
+	STACK.top = 0;
+}
+
+
+
+int inEmpty(STACK *stack)
+{
+	return Stack.top ==0;
+
+}
+
+int push(STACK *stack)
+{}
+
+
+
+--------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define OK 0
+#define ERROR -1
+#define MAXSIZE 100
+
+struct Stack{
+	int top;
+	char S[MAXSIZE]
+};
+typedef struct Stack STACK;
+
+void initStack(STACK *stack)
+{
+	STACK.top = 0;
+}
+
+
+
+int inEmpty(STACK *stack)
+{
+	return Stack.top ==0;
+
+}
+
+int push(STACK *stack, char c)
+{
+	if(STACK.top >= MAXSIZE - 1)
+	{
+}
+
+
+------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define OK 0
+#define ERROR -1
+#define MAXSIZE 100
+
+struct Stack{
+	int top;
+	char S[MAXSIZE]
+};
+typedef struct Stack STACK;
+
+void initStack(STACK *stack)
+{
+	STACK.top = 0;
+}
+
+
+
+int inEmpty(STACK *stack)
+{
+	return Stack.top ==0;
+
+}
+
+int push(STACK *stack, char c)
+{
+	if(STACK.top >= MAXSIZE - 1)
+		return ERROR;
+	
+	STACK.S[STACK.top]= char c;
+	STACK.top++;
+	return OK;
+}
+
+int pop(STACK *stack,char *c)
+{
+	if(inEmpty(stack))
+		return ERROR;
+		c=STACK.S[STACK.top]
+		STACK.top--;
+		
+		return OK;
+}
+
+
+int match(STACK *stack, char st[])
+{
+	int i, n,len;
+	char c;
+	initStack(stack);
+	len = strlen(st);
+	for(int i = 0; i < len; i++)
+	{
+		
+	}
+}
+
+
+
+
+======================
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define OK 0
+#define ERROR -1
+#define MAXSIZE 100
+
+struct Stack{
+	int top;
+	char S[MAXSIZE]
+};
+typedef struct Stack STACK;
+
+
+
+void initStack(STACK *stack)
+{
+	STACK.top = 0;
+}
+
+
+
+int inEmpty(STACK *stack)
+{
+	return Stack.top ==0;
+
+}
+
+int push(STACK *stack, char c)
+{
+	if(STACK.top >= MAXSIZE - 1)
+		return ERROR;
+	
+	STACK.S[STACK.top]= char c;
+	STACK.top++;
+	return OK;
+}
+
+int pop(STACK *stack,char *c)
+{
+	if(inEmpty(stack))
+		return ERROR;
+		c=STACK.S[STACK.top]
+		STACK.top--;
+		
+		return OK;
+}
+
+
+int match(STACK *stack, char st[])
+{
+	int i, n,len;
+	char c;
+	initStack(stack);
+	len = strlen(st);
+	for(int i = 0; i < len; i++)
+	{
+		switch(st[i])
+		{
+			case'(':
+			case'[':
+			case'{':
+				push(&stack,st[i]);
+				break;
+				
+			case')':
+				if(isEmpty(&stack))
+				{
+					printf("\n右括号多余")；
+					return；
+				}
+				else
+					if(st[i-1]='()'))
+						pop(&stack,&st[i-1]);
+					else
+						printf("\n对应的左右括号不同类！")；
+						
+				return；
+				 
+			case']':
+			case'{':
+				if(isEmpty(&stack))
+				{
+					printf("\n右括号多余")；
+					return；
+				}
+				else
+					if(match(&stack,st[i-1]))
+						pop(&stack,&st[])
+		 } 
+	}
+}
+
+
+
+
+==============================================
+//pro-final
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define OK 0
+#define ERROR -1
+#define MAXSIZE 100
+
+struct Stack{
+	int top;
+	char S[MAXSIZE]
+};
+typedef struct Stack STACK;
+
+
+
+void initStack(STACK *stack)
+{
+	STACK.top = 0;
+}
+
+
+
+int inEmpty(STACK *stack)
+{
+	return Stack.top ==0;
+
+}
+
+int push(STACK *stack, char c)
+{
+	if(STACK.top >= MAXSIZE - 1)
+		return ERROR;
+	
+	STACK.S[STACK.top]= char c;
+	STACK.top++;
+	return OK;
+}
+
+int pop(STACK *stack,char *c)
+{
+	if(inEmpty(stack))
+		return ERROR;
+		c=STACK.S[STACK.top]
+		STACK.top--;
+		
+		return OK;
+}
+
+
+int match(STACK *stack, char st[])
+{
+	int i, n,len;
+	char c;
+	initStack(stack);
+	len = strlen(st);
+	for(int i = 0; i < len; i++)
+	{
+		switch(st[i])
+		{
+			case'(':
+			case'[':
+			case'{':
+				push(&stack,st[i]);
+				break;
+				
+			case')':
+				if(isEmpty(&stack))
+				{
+					printf("\n右括号多余")；
+					return；
+				}
+				else
+					if(st[i-1]='（'))
+						pop(&stack,&st[i-1]);
+					else
+						printf("\n对应的左右括号不同类！")；
+						
+				return；
+				 
+			case']':
+				if(isEmpty(&stack))
+				{
+					printf("\n右括号多余")；
+					return；
+				}
+				else
+					if(st[i-1]='['))
+						pop(&stack,&st[i-1]);
+					else
+						printf("\n对应的左右括号不同类！")；
+						
+				return；
+			case'{':
+				if(isEmpty(&stack))
+				{
+					printf("\n右括号多余")；
+					return；
+				}
+				else
+					if(st[i-1]='{'))
+						pop(&stack,&st[i-1]);
+					else
+						printf("\n对应的左右括号不同类！")；
+						
+				return；
+					
+		 } 
+	}
+	if(isEmpty(&stack))
+		return OK;
+	else
+		return ERROR;
+}
+
+int main()
+{
+	int n;
+	char st[1000];
+	STACK *stack = (STACK*)malloc(sizeof(STACK));
+	initStack(stack);
+	scanf("%d",&n);
+	while(n--)
+	{
+		scanf("%s",st);
+		
+		if(match(stack, st)==OK)
+			printf("correct\n");
+		else
+			printf("error\n");
+			
+	}
+	free(stack);
+	return 0;	
+}
+
+
